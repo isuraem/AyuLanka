@@ -1,0 +1,40 @@
+version: '3'
+
+services:
+ mongo:
+   image: mongo
+   ports:
+     - 27017:27017
+   volumes:
+     - mongodb_data:/data/db
+
+ user-management:
+   build: ./userManagement
+   ports:
+     - 3001:3001
+   depends_on:
+     - mongo
+
+ product-management:
+   build: ./productManagement
+   ports:
+     - 3002:3002
+   depends_on:
+     - mongo
+
+ ayulanka-web:
+   build: ./ayulanka-web
+   ports:
+     - 3000:3000
+
+   environment:
+     - REACT_APP_USER_MANAGEMENT_API_URL=http://user-management:3001
+     - REACT_APP_PRODUCT_MANAGEMENT_API_URL=http://product-management:3002
+
+
+   depends_on:
+     - user-management
+     - product-management
+
+volumes:
+ mongodb_data:
