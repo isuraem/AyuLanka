@@ -25,8 +25,14 @@ connection.once("open", () => {
 });
 
 const sellerRouter = require("./routes/sellerRoutes");
+const buyerRouter = require("./routes/buyerRoutes");
+const feedbackRouter = require("./routes/feedbackRoutes");
+const loginRouter = require("./routes/loginRoutes");
 
 app.use("/api/seller",sellerRouter);
+app.use("/api/buyer",buyerRouter);
+app.use("/api/feedback",feedbackRouter);
+app.use("/api/login",loginRouter);
 
 
 app.listen(PORT, () => {
