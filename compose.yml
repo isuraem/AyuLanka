@@ -22,19 +22,49 @@ services:
    depends_on:
      - mongo
 
+ order-management:
+   build: ./productCheckoutManagement
+   ports:
+     - 3005:3005
+   depends_on:
+     - mongo
+
+ payment-management:
+   build: ./paymentManagmenet
+   ports:
+     - 3007:3007
+   depends_on:
+     - mongo
+
+ cart-management:
+   build: ./cartManagement
+   ports:
+     - 3006:3006
+   depends_on:
+     - mongo
+
+
  ayulanka-web:
    build: ./ayulanka-web
+   
    ports:
      - 3000:3000
 
    environment:
      - REACT_APP_USER_MANAGEMENT_API_URL=http://user-management:3001
      - REACT_APP_PRODUCT_MANAGEMENT_API_URL=http://product-management:3002
-
+     - REACT_APP_PAYMENT_MANAGEMENT_API_URL=http://payment-management:3007
+     - REACT_APP_PRODUCTCHECKOUT_MANAGEMENT_API_URL=http://order-management:3005
+     - REACT_APP_CART_MANAGEMENT_API_URL=http://cart-management:3006
+    
 
    depends_on:
      - user-management
      - product-management
+     - payment-management
+     - order-management
+     - cart-management
+     
 
 volumes:
  mongodb_data:
