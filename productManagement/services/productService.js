@@ -5,7 +5,7 @@ let Product = require("../models/product");
 //create Product service for add Product
 module.exports.createProductService = async (req, res) => {
   try {   
-    const productTitle = req.productTitle
+    const productTitle = req.productTitle;
     const productName = req.productName;
     const productCode = req.productCode; 
     const shop = req.shop;   
