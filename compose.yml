@@ -42,7 +42,12 @@ services:
      - 3006:3006
    depends_on:
      - mongo
-
+ seller-management:
+   build: ./sellerManagement
+   ports:
+     - 3004:3004
+   depends_on:
+     - mongo
 
  ayulanka-web:
    build: ./ayulanka-web
@@ -56,6 +61,7 @@ services:
      - REACT_APP_PAYMENT_MANAGEMENT_API_URL=http://payment-management:3007
      - REACT_APP_PRODUCTCHECKOUT_MANAGEMENT_API_URL=http://order-management:3005
      - REACT_APP_CART_MANAGEMENT_API_URL=http://cart-management:3006
+     - REACT_APP_SELLER_MANAGEMENT_API_URL=http://cart-management:3004
     
 
    depends_on:
@@ -64,6 +70,7 @@ services:
      - payment-management
      - order-management
      - cart-management
+     - seller-management
      
 
 volumes:
