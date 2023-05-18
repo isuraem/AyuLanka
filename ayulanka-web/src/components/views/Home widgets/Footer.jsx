@@ -3,7 +3,6 @@ import styled from "styled-components"
 
 const Container = styled.div`
     display: flex;
-    background-color: #b2d8d8
 `;
 
 const Left = styled.div`
@@ -13,14 +12,20 @@ const Left = styled.div`
     padding: 20px;
 `;
 
-const Logo = styled.h1``;
+const Logo = styled.h1`
+  
+`;
 
 const Desc = styled.p`
     margin: 20px 0px;
+    display: flex;
 `;
 
 const SocialContainer = styled.div`
     display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
 `;
 
 const SocialIcon = styled.div`
@@ -38,6 +43,7 @@ const SocialIcon = styled.div`
 const Center = styled.div`
     flex: 1;
     padding: 20px;
+    
 `;
 
 const Title = styled.h3`
@@ -50,11 +56,13 @@ const List = styled.ul`
   list-style: none;
   display: flex;
   flex-wrap: wrap;
+  
 `;
 
 const ListItem = styled.li`
   width: 50%;
   margin-bottom: 10px;
+  
 `;
 
 const Right = styled.div`
@@ -70,18 +78,18 @@ const ContactItem = styled.div`
 
 const Payment = styled.img`
     width: 50%;
+    display: flex;
+
 `;
 
 const Footer = () => {
   return (
     <Container>
       <Left>
-        <Logo>
-        <img src="images/new.png" style={{
-          width: '250px',
-        }} alt="logo" />
-        </Logo>
-        <Desc>bla bla bla</Desc>
+        <Logo>AyuLannka</Logo>
+        <Desc>"AyuLanka is an online platform for purchasing traditional and alternative medicines, supplements,
+        and wellness products from Sri Lanka. The website offers a range of natural remedies and authentic Ayurvedic
+        products to support overall health and wellness."</Desc>
         <SocialContainer>
             <SocialIcon color="3B5999">
                 <Facebook />
