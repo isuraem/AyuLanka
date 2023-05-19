@@ -13,7 +13,6 @@ app.use(express.json());
 const URL = process.env.MONGODB_URL;
 
 mongoose.connect(URL, {
-  
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
@@ -21,20 +20,15 @@ mongoose.connect(URL, {
 const connection = mongoose.connection;
 //connect database
 connection.once("open", () => {
-  console.log("Mongodb Connection Success !" , PORT);
+  console.log("Mongodb Connection Success !", PORT);
 });
 
-const sellerRouter = require("./routes/sellerRoutes");
-const buyerRouter = require("./routes/buyerRoutes");
-const feedbackRouter = require("./routes/feedbackRoutes");
-const loginRouter = require("./routes/loginRoutes");
+// const sellerRouter = require("./routes/sellerRoutes");
+const userRouter = require("./routes/buyerRoutes");
 
-app.use("/api/seller",sellerRouter);
-app.use("/api/buyer",buyerRouter);
-app.use("/api/feedback",feedbackRouter);
-app.use("/api/login",loginRouter);
-
+// app.use("/api/seller",sellerRouter);
+app.use("api/buyer", userRouter);
 
 app.listen(PORT, () => {
-    console.log(`server is up and running on port: ${PORT}`);
-})
+  console.log(`server is up and running on port: ${PORT}`);
+});

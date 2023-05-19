@@ -1,6 +1,10 @@
 const router = require("express").Router();
 const buyreController = require("../controllers/buyerController");
 const Buyer = require("../models/buyer");
+const feesbackController = require("../controllers/feedbackController");
+const Feedback = require("../models/feedback");
+const loginController = require("../controllers/loginController");
+
 
 // route for add buyer
 router.route("/addBuyer").post((req,res) => {
@@ -66,5 +70,31 @@ router.route("/deleteBuyer").delete((req,res)=>{
 
     const response = buyreController.deleteBuyerContraller(deleteBuyer,res);
 })
+
+// route for add feedback
+router.route("/addFeedback").post((req,res)=>{
+    console.log("feedbackRoute", req.body);
+    const response = feesbackController.createFeedbackeController(req.body, res);
+});
+
+// route for get all feedbacks
+router.route("/getAllFeedbacks").get((req,res)=>{
+    console.log("getAll...");
+    const response = feesbackController.getFeedbackController(req.body.data , res);
+});
+
+// route for login
+router.route("/login/:Email/:Password").get((req,res)=>{
+    let Email = req.params.Email;
+    let Password = req.params.Password;
+
+    let getData = {
+        Email: Email,
+        Password: Password,
+        body: req.body,
+    };
+
+    const response = loginController.buyerLoginController(getData,res);
+});
 
 module.exports = router;
