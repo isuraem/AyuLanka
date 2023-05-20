@@ -27,7 +27,7 @@ connection.once("open", () => {
 const userRouter = require("./routes/buyerRoutes");
 
 // app.use("/api/seller",sellerRouter);
-app.use("api/buyer", userRouter);
+app.use("/api/buyer", userRouter);
 
 app.listen(PORT, () => {
   console.log(`server is up and running on port: ${PORT}`);

@@ -6,6 +6,7 @@ import Navbar from "../Home widgets/Navbar";
 import Footer from "../Home widgets/Footer";
 import FeedbackView from './feedbackView';
 import { getFeedbackService } from '../../../services/buyerService';
+import NavbarAdmin from '../Home widgets/NavBarAdmin';
 
 export default function AllFeedbacks() {
     const [viewFeedback, setViewFeedback] = useState([]);
@@ -21,12 +22,12 @@ export default function AllFeedbacks() {
     }, []);
 
     async function getFeedback() {
-        console.log("getFeedback");
+        // console.log("getFeedback");
 
         let response = await getFeedbackService();
         if(response.ok){
-            console.log(res.data.data);
-            setViewFeedback(res.data.data);
+            console.log("res>>",response.data.data);
+            setViewFeedback(response.data.data);
         } else{
             console.log("error", response);
         }
@@ -56,7 +57,7 @@ export default function AllFeedbacks() {
     return (
         <div className="page-component-body">
             <div>
-                <Navbar/>
+                <NavbarAdmin/>
                 <br></br>
             </div>
             <Modal

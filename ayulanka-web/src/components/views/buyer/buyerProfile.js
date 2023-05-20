@@ -119,11 +119,11 @@ export default function BuyerProfile() {
         window.location.reload();
       });
     } else {
-      const msgerr = err.response.data.errorCode;
+      // const msgerr = err.response.data.errorCode;
       Swal.fire({
         icon: "warning",
         title: "Oops...",
-        text: `${msgerr}`,
+        // text: `${msgerr}`,
         confirmButtonColor: "#1fc191",
       });
     }

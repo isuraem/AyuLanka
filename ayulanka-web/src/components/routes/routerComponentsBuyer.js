@@ -6,12 +6,14 @@ import BuyerProfile from "../views/buyer/buyerProfile";
 import AllBuyers from "../views/buyer/viewAllBuyers";
 import Feedback from "../views/buyer/feedback";
 import AllFeedbacks from "../views/buyer/viewAllFeedbacks";
+import Home from "../views/home";
 
 export const RouterComponentsBuyer = () => {
     return(
         <div>
             <Router>
                 <Switch>
+                    <Route path='/home' exact component={Home}/>
                     <Route path="/login" exact component={Login}/>
                     <Route path="/signup" exact component={Signup}/>
                     <Route path="/buyerProfile" exact component={BuyerProfile}/>

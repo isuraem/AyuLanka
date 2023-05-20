@@ -42,7 +42,7 @@ export const updateBuyerService = async (id, buyer) => {
 export const deleteBuyer = async (buyer) => {
     console.log("pay>>", buyer)
     try {
-        let response = await axios.post(BASE_URL + '/deleteBuyer', buyer);
+        let response = await axios.delete(BASE_URL + `/deleteBuyer`, buyer);
 
         return {
             ok: true,
@@ -119,7 +119,7 @@ export const getFeedbackService = async () => {
 
     try {
         let response = await axios.get(BASE_URL + '/getAllFeedbacks');
-
+        console.log("res>>>>>",response);
         return {
             ok: true,
             data: response.data

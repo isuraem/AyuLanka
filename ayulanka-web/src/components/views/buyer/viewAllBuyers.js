@@ -6,6 +6,7 @@ import Navbar from "../Home widgets/Navbar";
 import Footer from "../Home widgets/Footer";
 import ProfileView from "./profileView";
 import { deleteBuyer, getBuyerService } from "../../../services/buyerService";
+import NavbarAdmin from "../Home widgets/NavBarAdmin";
 
 export default function AllBuyers() {
   const [viewProfile, setViewProfile] = useState([]);
@@ -35,8 +36,8 @@ export default function AllBuyers() {
 
     let response = await getBuyerService();
     if (response.ok) {
-      console.log(res.data.data);
-      setViewProfile(res.data.data);
+      console.log(response.data.data);
+      setViewProfile(response.data.data);
     }
 
     // axios.get(`http://localhost:5000/buyer/getAllBuyers`).then((res) => {
@@ -83,7 +84,7 @@ export default function AllBuyers() {
       Swal.fire({
         icon: "warning",
         title: "Oops...",
-        text: `${err}`,
+        // text: `${err}`,
         confirmButtonColor: "#1fc191",
       });
     }
@@ -120,7 +121,7 @@ export default function AllBuyers() {
   return (
     <div className="page-component-body">
       <div>
-        <Navbar />
+        <NavbarAdmin/>
         <br></br>
       </div>
       <Modal

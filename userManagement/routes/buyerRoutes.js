@@ -61,8 +61,9 @@ router.route("/updateBuyer/:id").post((req,res) => {
 
 // route for delete buyer using id
 router.route("/deleteBuyer").delete((req,res)=>{
-    console.log("delete buyer", req);
+    console.log("delete buyer", req.body._id);
     let id = req.body._id;
+    console.log("id>>",id);
     let deleteBuyer = {
         id:id,
         body: req.body,

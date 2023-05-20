@@ -53,11 +53,11 @@ export default function Signup() {
         window.location.reload();
       });
     } else {
-      const msgerr = err.response.data.status;
+    //   const msgerr = error.response.data.status;
       Swal.fire({
         icon: "warning",
         title: "Oops...",
-        text: `${msgerr}`,
+        // text: `${msgerr}`,
         confirmButtonColor: "#1fc191",
       });
     }
