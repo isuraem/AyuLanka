@@ -49,7 +49,7 @@ router.route("/deleteOrder").delete((req,res)=>{
 
 //----------------------------------------------------------------------------
 //route for view Delivery
-router.route("/view").get((req, res) => {
+router.route("/viewDelivery").get((req, res) => {
   const response = OrderController.viewDeliveryController(
     req.body.data,
     res

@@ -99,6 +99,7 @@ const Navbar = () => {
           </Center>
 
           <Right>
+            <MenuItem><Link to="/"><b>Admin</b></Link></MenuItem>
             <MenuItem><b>Register</b></MenuItem>
             <MenuItem><b>SIGN IN</b></MenuItem>
             <MenuItem>

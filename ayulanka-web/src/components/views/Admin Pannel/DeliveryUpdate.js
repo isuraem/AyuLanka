@@ -49,7 +49,7 @@ function DeliveryUpdate({data}) {
 
                 const newDelivery = { street, city, province, postalCode}
 
-                axios.post(`http://localhost:5000/delivery/updateDelivery/${data._id}`, newDelivery).then(() => {
+                axios.post(`http://localhost:3005/order/updateDelivery/${data._id}`, newDelivery).then(() => {
                     //alert("Rental Record successfully Updated");
                     Swal.fire({
                         title: "Rental Record successfully Updated! ",
@@ -59,7 +59,7 @@ function DeliveryUpdate({data}) {
 
                     }).then((res) => {
                         if (res.isConfirmed) {
-                            window.location.replace('/admin');
+                            window.location.replace('/admin/deliveries');
                         }
                     })
 

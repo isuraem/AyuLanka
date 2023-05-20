@@ -95,7 +95,7 @@ export const createDilerveryForOrderService = async (paymentPayload) => {
 export const viewDeliveryService = async () => {
 
     try {
-        let response = await axios.get(BASE_URL_DEL + '/view');
+        let response = await axios.get(BASE_URL + '/view');
 
         return {
             ok: true,
@@ -113,7 +113,7 @@ export const viewDeliveryService = async () => {
 export const updateDeliveryService = async (payload) => {
 
     try {
-        let response = await axios.put(BASE_URL_DEL + '/updateDelivery', payload);
+        let response = await axios.put(BASE_URL + '/updateDelivery', payload);
 
         return {
             ok: true,
@@ -131,7 +131,7 @@ export const updateDeliveryService = async (payload) => {
 export const deleteDeliveryService = async (payload) => {
     console.log("pay>>", payload)
     try {
-        let response = await axios.post(BASE_URL_DEL + '/deleteDelivery', payload);
+        let response = await axios.post(BASE_URL + '/deleteDelivery', payload);
 
         return {
             ok: true,

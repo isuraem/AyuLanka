@@ -21,7 +21,7 @@ export const RouterComponentsProduct = () => {
           <Route path="/payment" exact component={Payment} />
           <Route path="/home" exact component={Home} />
           <Route path="/cart" exact component={CartView} />
-          <Route path="/admin" exact component={Admin}/>
+          <Route path="/" exact component={Admin}/>
           <Route path="/admin/order" exact component={OrderlList}/>
           <Route path="/admin/deliveries" exact component={DeliverylList}/>
         </Switch>

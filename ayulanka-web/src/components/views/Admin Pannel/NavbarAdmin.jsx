@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Search, AccountCircleOutlined } from "@material-ui/icons";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 
 const Container = styled.div`
   height: 60px;
@@ -80,8 +80,9 @@ const Navbar = () => {
           </Center>
 
           <Right>
-            <MenuItem><button onClick={()=>{history.push("/admin/order")}}>Orders</button></MenuItem>
-            <MenuItem><button onClick={()=>{history.push("/admin")}}>Deliveries</button></MenuItem>
+          <MenuItem><Link to="/home">Home</Link></MenuItem>
+            <MenuItem><Link to="/admin/order">Order</Link></MenuItem>
+            <MenuItem><Link to="/">Delivery</Link></MenuItem>
             <MenuItem>Login</MenuItem>
             <MenuItem>
               

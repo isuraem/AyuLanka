@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link, useHistory, withRouter } from "react-router-dom";
-import { Modal, Button } from "react-bootstrap";
+import { Modal, Button, Navbar } from "react-bootstrap";
 import Swal from 'sweetalert2';
-import NavbarAdmin from '../views/Admin Pannel/NavbarAdmin';
-import Footer from '../views/Home widgets/Footer';
+import NavbarAdmin from "../Admin Pannel/NavbarAdmin"
 
 
 import OrderUpdateModal from "./OrderUpdate";
+import Footer from "../Home widgets/Footer";
 
 function OrderlList() {
 
@@ -27,7 +27,7 @@ function OrderlList() {
 
       
             function getOrder() {
-                axios.get(`http://localhost:5000/order/view`).then((res) => { //normally the fetched rental record details are displayed through this
+                axios.get(`http://localhost:3005/order/view`).then((res) => { //normally the fetched rental record details are displayed through this
                     //setRentals(res.data.reverse());
                     setOrderList(res.data.data);
                 }).catch((error) => {
@@ -57,7 +57,7 @@ function OrderlList() {
     }
 
     function deleteOrder(data) {
-        axios.delete(`http://localhost:5000/order/deleteOrder`, { data, }).then(() => {
+        axios.delete(`http://localhost:3005/order/deleteOrder`, { data, }).then(() => {
             alert("Data deleted");
             window.location.reload();
         }).catch((err) => {
@@ -199,7 +199,7 @@ function OrderlList() {
             </Modal>
 
         <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/> 
-        <Footer/>                        
+        <Footer/>
 
         </div >
     )

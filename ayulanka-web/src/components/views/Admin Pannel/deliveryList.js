@@ -25,7 +25,7 @@ function DeliverylList() {
 
       
             function getDelivery() {
-                axios.get(`http://localhost:5000/delivery/view`).then((res) => { //normally the fetched rental record details are displayed through this
+                axios.get(`http://localhost:3005/order/viewDelivery`).then((res) => { //normally the fetched rental record details are displayed through this
                     //setRentals(res.data.reverse());
                     setDeliveryList(res.data.data);
                 }).catch((error) => {
@@ -55,7 +55,7 @@ function DeliverylList() {
     }
 
     function deleteDelivery(data) {
-        axios.delete(`http://localhost:5000/delivery/deleteDelivery`, { data, }).then(() => {
+        axios.delete(`http://localhost:3005/order/deleteDelivery`, { data, }).then(() => {
             alert("Data deleted");
             window.location.reload();
         }).catch((err) => {
