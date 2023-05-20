@@ -174,168 +174,192 @@ export default function BuyerProfile() {
         <br></br>
         <br></br>
       </div>
-      <div className="container" style={{ textAlign: "start" }}>
-        <div className="col-lg-10 col-xl-7 flex-row mx-auto px-0">
-          <div class="py-4 text-center">
-            <h2>My Profile</h2>
-          </div>
+      <div
+        className="container-fluid"
+        style={{
+          backgroundImage:
+            "url(https://media.istockphoto.com/photos/alternative-medicine-naturopath-and-dietary-supplement-picture-id1175523239?k=6&m=1175523239&s=612x612&w=0&h=1zhikKLkCHqTkFis2iovP_jDyL8hkeli7QbX06HaShw=)",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+          height: "100%",
+        }}
+      >
+        <div className="container" style={{ textAlign: "start" }}>
+          <div className="p-5 col-lg-10 col-xl-7 flex-row mx-auto px-0">
+            {/* <div class="py-4 text-center">
+                        <h2>My Profile</h2>
+                    </div> */}
 
-          <Card style={{ padding: "6px" }}>
-            <Card.Body className="px-4">
-              {/* <Card.Title>My Profile</Card.Title> */}
-              <Card.Text>
-                <Form className="form-reg">
-                  <Form.Group>
-                    <Form.Label>Name</Form.Label>
-                    <Form.Control
-                      type="text"
-                      placeholder="Buyer Name"
-                      disabled
-                      value={BuyerName}
-                    ></Form.Control>
-                  </Form.Group>
+            <Card
+              style={{
+                padding: "20px",
+                backdropFilter: "blur(10px)",
+                backgroundColor: "rgba(275, 275, 275, 0.550)",
+                borderRadius: "15px",
+              }}
+              className="p-5 ms-auto me-auto pt-4 pb-0 mt-2  shadow-sm"
+            >
+              <Card.Header>
+                <Card.Title className="py-2 text-center ">
+                  <h2>My Profile</h2>
+                </Card.Title>
+              </Card.Header>
+              <Card.Body className="px-4">
+                {/* <Card.Title>My Profile</Card.Title> */}
+                <Card.Text>
+                  <Form className="form-reg">
+                    <Form.Group>
+                      <Form.Label>Name</Form.Label>
+                      <Form.Control
+                        type="text"
+                        placeholder="Buyer Name"
+                        disabled
+                        value={BuyerName}
+                      ></Form.Control>
+                    </Form.Group>
 
-                  <Form.Group>
-                    <Form.Label>DOB</Form.Label>
-                    <Form.Control
-                      type="text"
-                      placeholder="DOB"
-                      disabled
-                      value={DOB}
-                    ></Form.Control>
-                  </Form.Group>
+                    <Form.Group>
+                      <Form.Label>DOB</Form.Label>
+                      <Form.Control
+                        type="text"
+                        placeholder="DOB"
+                        disabled
+                        value={DOB}
+                      ></Form.Control>
+                    </Form.Group>
 
-                  <Form.Group>
-                    <Form.Label>Gender</Form.Label>
-                    <Form.Control
-                      type="text"
-                      placeholder="Gender"
-                      disabled
-                      value={Gender}
-                    ></Form.Control>
-                  </Form.Group>
+                    <Form.Group>
+                      <Form.Label>Gender</Form.Label>
+                      <Form.Control
+                        type="text"
+                        placeholder="Gender"
+                        disabled
+                        value={Gender}
+                      ></Form.Control>
+                    </Form.Group>
 
-                  <Form.Group>
-                    <Form.Label>Email</Form.Label>
-                    <Form.Control
-                      type="email"
-                      placeholder="Email"
-                      disabled
-                      value={Email}
-                    ></Form.Control>
-                  </Form.Group>
+                    <Form.Group>
+                      <Form.Label>Email</Form.Label>
+                      <Form.Control
+                        type="email"
+                        placeholder="Email"
+                        disabled
+                        value={Email}
+                      ></Form.Control>
+                    </Form.Group>
 
-                  <Form.Group>
-                    <Form.Label>Mobile No.</Form.Label>
-                    <Form.Control
-                      type="text"
-                      placeholder="Mobile"
-                      disabled
-                      value={MobileNumber}
-                    ></Form.Control>
-                  </Form.Group>
+                    <Form.Group>
+                      <Form.Label>Mobile No.</Form.Label>
+                      <Form.Control
+                        type="text"
+                        placeholder="Mobile"
+                        disabled
+                        value={MobileNumber}
+                      ></Form.Control>
+                    </Form.Group>
 
-                  <Form.Group>
-                    <Form.Label>Default Address</Form.Label>
-                    <Form.Control
-                      type="text"
-                      placeholder="Address"
-                      disabled
-                      value={DefaultAddress}
-                    ></Form.Control>
-                  </Form.Group>
+                    <Form.Group>
+                      <Form.Label>Default Address</Form.Label>
+                      <Form.Control
+                        type="text"
+                        placeholder="Address"
+                        disabled
+                        value={DefaultAddress}
+                      ></Form.Control>
+                    </Form.Group>
 
-                  <Form.Group>
-                    <Form.Label>PostalCode</Form.Label>
-                    <Form.Control
-                      type="text"
-                      placeholder="Postal Code"
-                      disabled
-                      value={PostalCode}
-                    ></Form.Control>
-                  </Form.Group>
+                    <Form.Group>
+                      <Form.Label>PostalCode</Form.Label>
+                      <Form.Control
+                        type="text"
+                        placeholder="Postal Code"
+                        disabled
+                        value={PostalCode}
+                      ></Form.Control>
+                    </Form.Group>
 
-                  <Row>
-                    <div className="row">
-                      <div className="mt-5 col-6">
-                        <button
-                          className="btn btn-outline-success"
-                          type="button"
-                          onClick={() => openmodalUpdate(buyer)}
-                        >
-                          Update
-                        </button>
+                    <Row>
+                      <div className="row">
+                        <div className="mt-5 col-6">
+                          <button
+                            className="btn btn-outline-success"
+                            type="button"
+                            onClick={() => openmodalUpdate(buyer)}
+                          >
+                            Update
+                          </button>
+                        </div>
+
+                        <div className="text-right col-6 mt-5">
+                          <button
+                            className="btn btn-outline-danger"
+                            type="button"
+                            onClick={() => openModalDelete(buyer)}
+                          >
+                            Delete
+                          </button>
+                        </div>
                       </div>
+                    </Row>
+                  </Form>
+                </Card.Text>
+              </Card.Body>
+            </Card>
 
-                      <div className="text-right col-6 mt-5">
-                        <button
-                          className="btn btn-outline-danger"
-                          type="button"
-                          onClick={() => openModalDelete(buyer)}
-                        >
-                          Delete
-                        </button>
-                      </div>
+            <Modal
+              show={ModalUpdateConfirm}
+              onHide={() => setModalUpdateConfirm(false)}
+              size="lg"
+              aria-labelledby="contained-modal-title-vcenter"
+              centered
+            >
+              <UpdateProfile
+                data={ModalProfileUpdate}
+                onHide={() => setModalProfileUpdate(false)}
+              />
+            </Modal>
+
+            <Modal
+              show={ModalDeleteConfirm}
+              onHide={() => setModalDeleteConfirm(false)}
+              size="md"
+              aria-labelledby="contained-modal-title-vcenter"
+              centered
+            >
+              <Modal.Header closeButton>
+                <Modal.Title>Confirm Deletion</Modal.Title>
+              </Modal.Header>
+              <Modal.Body>
+                <p>Would you like to remove your profile ?</p>
+              </Modal.Body>
+              <Modal.Footer>
+                <Row>
+                  <div className="row">
+                    <div className="col-6 mt-1">
+                      <button
+                        type="submit"
+                        className="btn btn-danger"
+                        onClick={() => {
+                          deleteProfile(ModalProfileDelete);
+                        }}
+                      >
+                        Confirm
+                      </button>
                     </div>
-                  </Row>
-                </Form>
-              </Card.Text>
-            </Card.Body>
-          </Card>
 
-          <Modal
-            show={ModalUpdateConfirm}
-            onHide={() => setModalUpdateConfirm(false)}
-            size="lg"
-            aria-labelledby="contained-modal-title-vcenter"
-            centered
-          >
-            <UpdateProfile
-              data={ModalProfileUpdate}
-              onHide={() => setModalProfileUpdate(false)}
-            />
-          </Modal>
-
-          <Modal
-            show={ModalDeleteConfirm}
-            onHide={() => setModalDeleteConfirm(false)}
-            size="md"
-            aria-labelledby="contained-modal-title-vcenter"
-            centered
-          >
-            <Modal.Header closeButton>
-              <Modal.Title>Confirm Deletion</Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
-              <p>Would you like to remove your profile ?</p>
-            </Modal.Body>
-            <Modal.Footer>
-              <Row>
-                <div className="row">
-                  <div className="col-6 mt-1">
-                    <button
-                      type="submit"
-                      className="btn btn-danger"
-                      onClick={() => {
-                        deleteProfile(ModalProfileDelete);
-                      }}
+                    <div
+                      className="col-6 text-right mt-1"
+                      onClick={() => setModalDeleteConfirm(false)}
                     >
-                      Confirm
-                    </button>
+                      <button type="reset" className="btn btn-warning">
+                        cancel
+                      </button>
+                    </div>
                   </div>
-
-                  <div
-                    className="col-6 text-right mt-1"
-                    onClick={() => setModalDeleteConfirm(false)}
-                  >
-                    <button type="reset" className="btn btn-warning">
-                      cancel
-                    </button>
-                  </div>
-                </div>
-              </Row>
-            </Modal.Footer>
-          </Modal>
+                </Row>
+              </Modal.Footer>
+            </Modal>
+          </div>
         </div>
       </div>
       <br></br>

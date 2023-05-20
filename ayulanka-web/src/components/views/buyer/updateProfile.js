@@ -162,13 +162,23 @@ export default function UpdateProfile({ data }) {
   }
 
   return (
-    <div>
+    <div
+      style={{
+        borderColor: "#31b448",
+        backgroundImage:
+          "url(https://th.bing.com/th/id/OIP.-L55eg3eSeKFQS1WwgscZgHaE7?pid=ImgDet&rs=1)",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "798px 1045px",
+        height: "100%",
+        backdropFilter: "blur(10px)",
+      }}
+    >
       <Modal.Header closeButton>
         <Modal.Title>Update Profile: {data.BuyerName}</Modal.Title>
       </Modal.Header>
-      <Modal.Body className="px-4">
+      <Modal.Body className="px-4" style={{ backdropFilter: "blur(100px)" }}>
         <div>
-          <hr></hr>
+          {/* <hr></hr> */}
           <div className="container border-top">
             <div className="row">
               <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
