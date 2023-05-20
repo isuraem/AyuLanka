@@ -1,12 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Badge } from "@material-ui/core";
-import { Search, ShoppingCartOutlined } from "@material-ui/icons";
-import { Link } from 'react-router-dom'
+import { Search, AccountCircleOutlined } from "@material-ui/icons";
+import { useHistory, Link } from "react-router-dom";
 
 const Container = styled.div`
   height: 60px;
-  background-color:eaffff;
 `;
 
 const Wrapper = styled.div`
@@ -25,12 +23,6 @@ const Left = styled.div`
 const Language = styled.span`
   font-size: 14px;
   cursor: pointer;
-`;
-const Product = styled.span`
-  font-size: 14px;
-  margin-left: 30px;
-  cursor: pointer;
-  color: "black";
 `;
 
 const SearchContainer = styled.div`
@@ -68,6 +60,9 @@ const MenuItem = styled.div`
 `;
 
 const Navbar = () => {
+
+  let history = useHistory();
+  
   return (
     <Container>
         <Wrapper>
@@ -78,36 +73,21 @@ const Navbar = () => {
               <Input placeholder='Search'/>
               <Search style={{color:"gray", fontSize:16}}/>
             </SearchContainer>
-
-            <Product>
-            <Link style={{ textDecoration: 'none' ,color:"black" }} to="/catelog">
-
-              <b>Products</b>
-            </Link>
-          </Product>
           </Left>
 
           <Center>
-          <Link to="/home">
-            <Logo>
-            <img src="images/new.png" style={{
-          width: '250px',
-        }} alt="logo" />
-              {/* <img tyle={{width:"100%"}}src={"images/new.png"} alt="Logo" /> */}
-            </Logo>
-            </Link>
+            <Logo>AyuLanka</Logo>
           </Center>
 
           <Right>
-            <MenuItem><Link to="/"><b>Admin</b></Link></MenuItem>
-            <MenuItem><b>Register</b></MenuItem>
-            <MenuItem><b>SIGN IN</b></MenuItem>
+          <MenuItem><Link to="/home">Home</Link></MenuItem>
+            <MenuItem><Link to="/admin/order">Order</Link></MenuItem>
+            <MenuItem><Link to="/">Delivery</Link></MenuItem>
+            <MenuItem>Login</MenuItem>
             <MenuItem>
-              <Badge badgeContent={4} color="primary">
-              <Link to="/cart">
-                <ShoppingCartOutlined color="action" />
-                </Link>
-              </Badge>
+              
+                <AccountCircleOutlined color="action" />
+              
             </MenuItem>
           </Right>
         </Wrapper>
